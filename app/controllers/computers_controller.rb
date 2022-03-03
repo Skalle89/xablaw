@@ -13,8 +13,9 @@ class ComputersController < ApplicationController
 
   def create
     @computer = Computer.new(computer_params)
+    @computer.user = current_user
     if @computer.save
-      redirect_to computers
+      redirect_to computer_path(@computer)
     else
       render "new"
     end
