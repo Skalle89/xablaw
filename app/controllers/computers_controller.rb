@@ -13,7 +13,11 @@ class ComputersController < ApplicationController
 
   def create
     @computer = Computer.new(computer_params)
-    @computer.save
+    if @computer.save
+      redirect_to computers
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -34,6 +38,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computers).permit(:processador, :placa_de_video, :ram, :price_day)
+    params.require(:computer).permit(:processador, :placa_de_video, :ram, :price_day)
   end
 end

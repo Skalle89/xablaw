@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Computer.create(processador: "ryzen", ram: "16gb", placa_de_video: "rtx 2060", price_day: 20)
