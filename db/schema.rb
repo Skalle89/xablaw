@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2022_03_03_172509) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_time"
-    t.bigint "users_id", null: false
-    t.bigint "computers_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "computer_id", null: false
     t.boolean "available"
     t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["computers_id"], name: "index_bookings_on_computers_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["computer_id"], name: "index_bookings_on_computer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "computers", force: :cascade do |t|
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2022_03_03_172509) do
     t.string "placa_de_video"
     t.string "ram"
     t.integer "price_day"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_computers_on_users_id"
+    t.index ["user_id"], name: "index_computers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_172509) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "computers", column: "computers_id"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "computers", "users", column: "users_id"
+  add_foreign_key "bookings", "computers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "computers", "users"
 end
