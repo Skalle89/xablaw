@@ -3,6 +3,9 @@
     <h1>Xablau is the premier computer renting platform in the web</h1>
   </div>
 </div>
+<% if user_signed_in? %>
+  <%= current_user.email %>
+<% end %>
 <div class="container" id="home-cards">
   <div class="cards">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Hero-a1.png)">
