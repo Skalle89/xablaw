@@ -6,7 +6,7 @@
       <div class="card-product">
         <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg" />
         <div class="card-product-infos">
-          <h2><%= link_to computer.placa_de_video, computer_path(computer.id) %> - <%= computer.processador %></h2>
+          <h2><%= link_to "Oferta #{computer.id}", computer_path(computer.id) %> - <%= computer.processador %> - <%= computer.placa_de_video %></h2>
           <p>RAM:<%= computer.ram %> Preço/dia: R$<%= computer.price_day %>,00</p>
         </div>
       </div>
