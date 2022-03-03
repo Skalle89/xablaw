@@ -34,6 +34,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computers).permit(:start_date, :end_time, :available, :total_price)
+    params.require(:computers).permit(:processador, :placa_de_video, :ram, :price_day)
   end
 end
