@@ -26,7 +26,12 @@
         <%= f.button :submit, "Book now!", class: "btn btn-primary" %>
         <% end %>
       </div>
-      <%= link_to "Delete", computer_path, method: :delete, class: "btn btn-outline-danger mt-1" %>
+      <% if policy(@computer).destroy? %>
+            <%= link_to 'Destroy', @computer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-1" %>
+          <% end %>
+      <% if policy(@computer).update? %>
+            <%= link_to 'Edit', edit_computer_path(@computer), class: "btn btn-outline-danger mt-1" %>
+          <% end %>
     </div>
   </div>
 </div>

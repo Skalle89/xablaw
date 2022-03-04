@@ -2,20 +2,23 @@ class ComputersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @computers = Computer.all
+    @computers = policy_scope(Computer)
   end
 
   def show
     @computer = Computer.find(params[:id])
+    authorize @computer
   end
 
   def new
     @computer = Computer.new
+    authorize @computer
   end
 
   def create
     @computer = Computer.new(computer_params)
     @computer.user = current_user
+    authorize @computer
     if @computer.save
       redirect_to computer_path(@computer)
     else
@@ -25,18 +28,22 @@ class ComputersController < ApplicationController
 
   def edit
     @computer = Computer.find(params[:id])
+    authorize @computer
   end
 
   def update
     @computer = Computer.find(params[:id])
-    @computer.update(computer_params)
+    authorize @computer
+    if current_user == @computer.user
+      @computer.update(computer_params)
+      redirect_to computer_path(@computer)
+    end
   end
 
   def destroy
     @computer = Computer.find(params[:id])
-    if current_user == @computer.user
-      @computer.destroy
-    end
+    authorize @computer
+    @computer.destroy
     redirect_to computers_path
   end
 
