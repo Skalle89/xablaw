@@ -34,8 +34,10 @@ class ComputersController < ApplicationController
 
   def destroy
     @computer = Computer.find(params[:id])
-    @computer.destroy
-    redirect_to computers
+    if current_user == @computer.user
+      @computer.destroy
+    end
+    redirect_to computers_path
   end
 
   private
