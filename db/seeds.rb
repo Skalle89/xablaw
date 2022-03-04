@@ -9,6 +9,7 @@
 processadores = ["Intel Core i9-12900K Processor", "Intel Core i7-12700K Processor", "AMD Ryzen 9 5950X", "Intel Core i5-12600K Processor", "AMD Ryzen 9 3900XT"]
 rams = ["4GB", "8GB", "16GB"]
 placas = ["Radeon RX 6900 XT", "GeForce RTX 3090", "GeForce RTX 3080 Ti", "Radeon RX 5500 XT 8GB", "Nvidia Titan RTX"]
+
 10.times do
   puts "I will create now"
   puts "creating..."
