@@ -41,6 +41,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:processador, :placa_de_video, :ram, :price_day)
+    params.require(:computer).permit(:processador, :placa_de_video, :ram, :price_day, :photo)
   end
 end
