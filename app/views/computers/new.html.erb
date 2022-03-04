@@ -1,7 +1,11 @@
-<%= simple_form_for @computer do |f| %>
-  <%= f.input :processador %>
-  <%= f.input :placa_de_video %>
-  <%= f.input :ram %>
-  <%= f.input :price_day %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container d-flex justify-content-center">
+  <div class="col-6 p-4">
+    <%= simple_form_for @computer do |f| %>
+      <%= f.input :processador %>
+      <%= f.input :placa_de_video %>
+      <%= f.input :ram %>
+      <%= f.input :price_day %>
+      <%= f.button :submit, class: "btn btn-outline-secondary" %>
+    <% end %>
+  </div>
+</div>
