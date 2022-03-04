@@ -5,7 +5,8 @@
 </div>
 
 <div class="container d-flex align-content-start flex-wrap" style="margin-bottom:3em; padding-left:100px">
-  <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg" class="img-fluid img-thumbnail">
+  <%# <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg" class="img-fluid img-thumbnail"> %>
+  <%= cl_image_tag @computer.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="container col-4">
     <div class="card" style="width: 18rem;">
       <ul class="list-group list-group-flush">

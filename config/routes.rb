@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :computers
   # delete '/computers/:id', to: 'computers#destroy', as: 'delete'
   resources :bookings, only: %i[index create]
+  resources :users, only: :show
 end
