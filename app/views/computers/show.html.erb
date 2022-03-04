@@ -1,1 +1,31 @@
-<%= link_to "Delete", computer_path, method: :delete %>
+<div class="container">
+  <div class="row">
+    <h1>Details of Offer <%= @computer.id %></h1>
+  </div>
+</div>
+
+<div class="container d-flex align-content-start flex-wrap" style="margin-bottom:3em; padding-left:100px">
+  <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg" class="img-fluid img-thumbnail">
+  <div class="container col-4">
+    <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Processor: <%= @computer.processador %></li>
+        <li class="list-group-item">GPU: <%= @computer.placa_de_video %></li>
+        <li class="list-group-item">RAM: <%= @computer.ram %></li>
+        <li class="list-group-item">R$<%= @computer.price_day %>,00/dia</li>
+        <li class="list-group-item">Owner: <%= @computer.user.first_name %></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="form-wrapper" style="width: 250px; margin-top:10px">
+        <h3 style="text-align:center">Book now!</h3>
+
+        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book now!", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
