@@ -4,9 +4,9 @@ class UserPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def show?
-      true
-    end
+  def show?
+    record.id == user.id
   end
 end

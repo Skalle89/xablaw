@@ -1,1 +1,45 @@
-<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container d-flex">
+  <div class="m-3 p-3 d-flex bg-white align-items-center h-3">
+    <div class="m-2">
+      <%=if @user.photo.attached?
+          cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill
+        else
+          image_tag "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png",
+          width:70, style:"border-radius:100%"
+        end
+      %>
+    </div>
+    <div>
+      <h6>
+        <%="#{@user.first_name} #{@user.last_name}"%>
+      </h6>
+      <h6>
+        <%= @user.email %>
+      </h6>
+    </div>
+  </div>
+  <div class="container p-3">
+    <div class="card m-3 p-3">
+      <h1>
+        My computers
+      </h1>
+      <%
+        #um each para os computadores do usuario
+        #atalho para deletar computadores
+        #atalho para ver todos os computadores
+        #atalho para editar computadores
+      %>
+    </div>
+    <div class="card m-3 p-3">
+      <h1>
+        My Bookmarks
+      </h1>
+      <%
+        #um each para os bookmarks do usuario
+        #atalho para deletar bookmarks
+        #atalho para ver todos os bookmarks
+        #atalho para editar bookmarks
+      %>
+    </div>
+  </div>
+</div>
