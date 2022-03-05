@@ -6,7 +6,7 @@ class UserPolicy < ApplicationPolicy
     end
 
     def show?
-      true
+      record.id == user.id
     end
   end
 end
