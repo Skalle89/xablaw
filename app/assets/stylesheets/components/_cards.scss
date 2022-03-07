@@ -1,6 +1,10 @@
 .cards {
   display: grid;
+<<<<<<< HEAD
   justify-content: center;
+=======
+  justify-content: space-between;
+>>>>>>> master
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
 }
