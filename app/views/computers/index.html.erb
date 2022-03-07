@@ -14,6 +14,7 @@
   <div class="cards">
       <% @computers.each do |computer| %>
           <div class="card-product" onclick="javascript:window.location.href='<%= computer_path(computer.id) %>' ">
+              <% #Tirar quando mudar as seeds%>
               <%=if computer.photo.attached?
                   cl_image_tag computer.photo.key, height: 300, width: 400, crop: :fill
               else
