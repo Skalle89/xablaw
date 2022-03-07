@@ -4,7 +4,13 @@
   <div class="cards">
       <% @computers.each do |computer| %>
           <div class="card-product" onclick="javascript:window.location.href='<%= computer_path(computer.id) %>' ">
-              <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg" />
+              <%=if computer.photo.attached?
+                  cl_image_tag computer.photo.key, height: 300, width: 400, crop: :fill
+              else
+                  image_tag "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/p/g/pgse-0e1-rgb6213201.jpg",
+                  width:70, style:"border-radius:100%"
+                end
+              %>
               <div class="card-product-infos">
                 <h2><%= computer.processador %> - <%= computer.placa_de_video %></h2>
                 <p>RAM:<%= computer.ram %> Preço/dia: R$<%= computer.price_day %>,00</p>
