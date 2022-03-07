@@ -1,8 +1,10 @@
 .cards {
-  display: grid;
+  display: flex;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 80px;
+  grid-gap: 50px;
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

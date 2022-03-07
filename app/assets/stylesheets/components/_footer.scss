@@ -7,9 +7,11 @@
   padding: 0px 50px;
   color: rgb(255, 255, 255);
   left:0px;
-  bottom:0px;
+  bottom:0;
   width:100%;
+  position: fixed;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
