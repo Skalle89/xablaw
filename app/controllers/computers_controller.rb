@@ -3,6 +3,12 @@ class ComputersController < ApplicationController
 
   def index
     @computers = policy_scope(Computer)
+    if params[:query].present?
+      sql_query = "processador ILIKE :query OR placa_de_video ILIKE :query"
+      @computers = Computer.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @computer = Computer.all
+    end
   end
 
   def show
