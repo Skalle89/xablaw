@@ -32,7 +32,7 @@
     </div>
     <div class="card m-3 p-3">
       <h1>
-        My Bookmarks
+        <%= link_to "My Bookings", computer_bookings_path(@user.bookings.first.computer_id) %>
       </h1>
       <%
         #um each para os bookmarks do usuario

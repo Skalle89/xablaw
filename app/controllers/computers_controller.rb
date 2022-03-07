@@ -13,6 +13,7 @@ class ComputersController < ApplicationController
 
   def show
     @computer = Computer.find(params[:id])
+    @booking = Booking.new
     authorize @computer
   end
 
