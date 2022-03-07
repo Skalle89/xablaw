@@ -1,10 +1,20 @@
 <h1 style="text-align:center">Browse Computers</h1>
 
 <div class="container col-auto" style="margin-top:3em">
+  <div class="row justify-content-center">
+    <%= form_tag computers_path, class: "col-6", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Computer"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary mt-2 mb-2" %>
+    <% end %>
+  </div>
   <div class="cards">
       <% @computers.each do |computer| %>
           <div class="card-product" onclick="javascript:window.location.href='<%= computer_path(computer.id) %>' ">
-              <% Tirar quando mudar as seeds%>
+              <%# <% Tirar quando mudar as seeds%>
               <%=if computer.photo.attached?
                   cl_image_tag computer.photo.key, height: 300, width: 400, crop: :fill
               else
