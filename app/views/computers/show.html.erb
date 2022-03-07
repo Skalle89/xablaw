@@ -5,7 +5,6 @@
 </div>
 
 <div class="container d-flex align-content-start flex-wrap" style="margin-bottom:3em; padding-left:100px">
-  <% #tirar quando mudar a seed %>
     <%=if @computer.photo.attached?
                   cl_image_tag @computer.photo.key, height: 300, width: 400, crop: :fill
               else
@@ -27,9 +26,9 @@
       <div class="form-wrapper" style="width: 250px; margin-top:10px">
         <h3 style="text-align:center">Book now!</h3>
 
-        <%= simple_form_for :search, method: "get" do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= simple_form_for([ @computer, @booking ]) do |f| %>
+        <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
         <%= f.button :submit, "Book now!", class: "btn btn-primary" %>
         <% end %>
       </div>
