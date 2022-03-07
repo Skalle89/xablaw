@@ -3,7 +3,10 @@
     <h1>Xablau is the premier computer renting platform in the web</h1>
   </div>
 </div>
-<%= current_user.email if user_signed_in? %>
+
+<div class="row">
+  <h2> Welcome <%= user_signed_in? ? current_user.first_name : "visitor" %>!</h2>
+</div>
 
 <div class="container" id="home-cards">
   <div class="cards">
