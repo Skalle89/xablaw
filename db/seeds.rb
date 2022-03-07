@@ -13,7 +13,9 @@ placas = ["Radeon RX 6900 XT", "GeForce RTX 3090", "GeForce RTX 3080 Ti", "Radeo
 10.times do
   puts "I will create now"
   puts "creating..."
-  computer = Computer.new(processador: processadores.sample, ram: rams.sample, placa_de_video: placas.sample, price_day: ["20","25","30","35"].sample, user_id: 1)
+  computer = Computer.new(processador: processadores.sample, ram: rams.sample, placa_de_video: placas.sample,
+                          price_day: ["20", "25", "30", "35"].sample, user_id: 1)
+  # computer.photo.attach(io: file, filename: array_of_images.sample, content_type: 'image/jpeg')
   computer.save
   puts "done!"
   p computer
