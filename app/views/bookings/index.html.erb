@@ -1,9 +1,7 @@
       <% @bookings.each do |booking| %>
-          <%= if booking.user == current_user %>
             <div class="card-product-infos">
               <h2><%= booking.start_date %> - <%= booking.end_time %></h2>
               <p>Usuário: <%= booking.user.first_name %></p>
               <p>Preço total: R$<%= booking.computer.price_day * (booking.end_time - booking.start_date).to_i %>,00</p>
             </div>
-          <%= end %>
       <% end %>
