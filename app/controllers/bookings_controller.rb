@@ -6,6 +6,10 @@ class BookingsController < ApplicationController
     @bookings = @user.bookings
   end
 
+  def new
+    @booking = Booking.new
+  end
+
   def create
     @computer = Computer.find(params[:computer_id])
     @booking = Booking.new(booking_params)
@@ -13,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.computer = @computer
     @booking.user = current_user
     if @booking.save
-      redirect_to computer_bookings_path(@computer)
+      redirect_to computer_bookings_path
     else
       render 'computers/show'
     end
