@@ -1,6 +1,6 @@
 <h1 style="text-align:center">Browse Computers</h1>
 
-<div class="container col-auto p-5">
+<div class="container p-5">
   <div class="row justify-content-center">
     <%= form_tag computers_path, class: "col-6", method: :get do %>
       <%= text_field_tag :query,
@@ -14,7 +14,7 @@
   <div class="cards">
       <% @computers.each do |computer| %>
           <div class="card-product" onclick="javascript:window.location.href='<%= computer_path(computer.id) %>'">
-              <%= cl_image_tag computer.photo.key, height: 100,  width: 100, crop: :fill%>
+              <%= cl_image_tag computer.photo.key,  width: 200, crop: :fill%>
               <div class="card-product-infos">
                 <h2><%= computer.processador %> - <%= computer.placa_de_video %></h2>
                 <p>RAM:<%= computer.ram %> Preço/dia: R$<%= computer.price_day %>,00</p>
