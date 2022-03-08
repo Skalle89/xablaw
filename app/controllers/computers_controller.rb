@@ -14,7 +14,6 @@ class ComputersController < ApplicationController
   def show
     @computer = Computer.find(params[:id])
     @booking = Booking.new
-    # @booking.computer = @computer
     authorize @computer
   end
 
