@@ -31,13 +31,10 @@
       %>
     </div>
     <div class="card m-3 p-3">
-        <%= if @user.bookings.empty? %>
-          <h1>
-            <%= link_to "My Bookings", computer_bookings_path(1) %>
-          </h1>
-        <%= else %>
-          <h1>You dont' have bookings</h1>
-        <%= end %>
+
+
+          <%= link_to "My Bookings", computer_bookings_path(4) %>
+
       <%
         #um each para os bookmarks do usuario
         #atalho para deletar bookmarks
