@@ -9,12 +9,12 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
-    redirect_to(computers_path)
+    redirect_to(root_path)
   end
 
   def configure_permitted_paramters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name photo])
   end
 
   private
