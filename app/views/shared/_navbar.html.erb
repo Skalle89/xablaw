@@ -19,7 +19,7 @@
             <%= link_to "Computers", computers_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= navbar_avatar_has_photo?(current_user) %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Register Computer", new_computer_path, class: "dropdown-item" %>
               <%= link_to "#{current_user.first_name}'s homepage", user_path(current_user), class: "dropdown-item" %>
