@@ -25,9 +25,7 @@
       %>
     </div>
     <div class="card m-3 p-3">
-      <h1>
-        <% #link_to "My Bookings", computer_bookings_path(@user.bookings.first.computer_id) %>
-      </h1>
+          <%= link_to "My Bookings", computer_bookings_path(4) %>
       <%
         #um each para os bookmarks do usuario
         #atalho para deletar bookmarks

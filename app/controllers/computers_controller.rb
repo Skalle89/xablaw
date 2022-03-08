@@ -24,6 +24,7 @@ class ComputersController < ApplicationController
 
   def create
     @computer = Computer.new(computer_params)
+    # @computer.booking = @booking
     @computer.user = current_user
     authorize @computer
     if @computer.save

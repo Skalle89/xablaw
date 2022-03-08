@@ -21,9 +21,11 @@
           <li class="nav-item dropdown">
             <%= navbar_avatar_has_photo?(current_user) %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
               <%= link_to "Register Computer", new_computer_path, class: "dropdown-item" %>
-              <%= link_to "#{current_user.first_name}'s homepage", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Bookings", computer_bookings_path(5), class: "dropdown-item" %>
+              <%= link_to "My #{current_user.first_name} homepage", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Bookings", computer_bookings_path(:computer_id), class: "dropdown-item" %>
+
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
