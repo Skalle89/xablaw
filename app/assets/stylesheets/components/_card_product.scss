@@ -2,12 +2,12 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(240, 236, 236, 0.774);
   display: flex;
   align-items: center;
   transition: 0.3s all ease-in-out;
   &:hover{
-    margin-top:-10px;
+    box-shadow: 0 0 15px rgb(179, 178, 178);
   }
 }
 
